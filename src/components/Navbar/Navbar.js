@@ -2,5 +2,9 @@ import React from "react";
 import "./Navbar.scss";
 
 export default function Navbar() {
-  return <div>Hello from navbar</div>;
+  return (
+    <nav className="" navbar>
+      <img src="" />
+    </nav>
+  );
 }
