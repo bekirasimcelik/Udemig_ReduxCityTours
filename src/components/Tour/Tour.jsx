@@ -3,6 +3,7 @@ import "./Tour.scss";
 
 export default class Tour extends Component {
   render() {
+    const { city, img, name, info } = this.props.tour;
     return (
       <article className="tour">
         <div className="img-container">
