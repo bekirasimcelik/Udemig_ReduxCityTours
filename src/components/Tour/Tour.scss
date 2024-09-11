@@ -28,7 +28,7 @@
   opacity: 0;
 }
 
-.img-container.hover .close-btn {
+.img-container:hover .close-btn {
   opacity: 1;
 }
 
