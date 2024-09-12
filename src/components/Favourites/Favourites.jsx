@@ -1,5 +1,6 @@
 import React from "react";
 import Tour from "../Tour/Tour";
+import "./Favourites.scss";
 
 const Favourites = ({ favourites = [], removeFromFavourites }) => {
   return (
