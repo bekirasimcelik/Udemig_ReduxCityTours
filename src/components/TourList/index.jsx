@@ -7,6 +7,7 @@ export default class TourList extends Component {
   state = {
     tours: tourData,
   };
+
   removeTour = (id) => {
     const { tours } = this.state;
     const sortedTours = tours.filter((tour) => tour.id !== id);
@@ -14,16 +15,21 @@ export default class TourList extends Component {
       tours: sortedTours,
     });
   };
+
   render() {
-    const { tours } = this.state;
+    const { addFavourite } = this.props;
 
     return (
       <section className="tourlist">
-        {tours.map((tour) => {
-          return (
-            <Tour key={tour.id} tour={tour} removeTour={this.removeTour} />
-          );
-        })}
+        {this.state.tours.map((tour) => (
+          <Tour
+            key={tour.id}
+            tour={tour}
+            removeTour={this.removeTour}
+            FavouriteTour={addFavourite}
+            isFavouritePage={false}
+          />
+        ))}
       </section>
     );
   }

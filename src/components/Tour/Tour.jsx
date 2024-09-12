@@ -11,9 +11,12 @@ export default class Tour extends Component {
       showInfo: !this.state.showInfo,
     });
   };
+
   render() {
     const { id, city, img, name, info } = this.props.tour;
-    const { removeTour } = this.props;
+    const { removeTour, FavouriteTour, removeFromFavourites, isFavouritePage } =
+      this.props;
+
     return (
       <article className="tour">
         <div className="img-container">
@@ -21,18 +24,23 @@ export default class Tour extends Component {
           <span
             className="close-btn"
             onClick={() => {
-              removeTour(id);
+              isFavouritePage ? removeFromFavourites(id) : removeTour(id);
             }}
           >
             <i className="fas fa-window-close" />
           </span>
+          {!isFavouritePage && (
+            <span
+              className="favo-btn"
+              onClick={() => {
+                FavouriteTour(this.props.tour);
+              }}
+            >
+              <i className="fa-solid fa-heart"></i>
+            </span>
+          )}
         </div>
-        <div
-          className="tour-info"
-          onClick={() => {
-            removeTour(id);
-          }}
-        >
+        <div className="tour-info">
           <h3>{city}</h3>
           <h4>{name}</h4>
           <h5>

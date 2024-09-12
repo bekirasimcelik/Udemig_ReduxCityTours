@@ -1,8 +1,7 @@
-@import "../../index.scss";
-
 .tour {
-  background: $mainGrey;
+  background: #f7f7f7;
   border-radius: 0.8rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 1rem 0;
   img {
     width: 100%;
@@ -18,13 +17,23 @@
 
 .close-btn {
   position: absolute;
-  display: block;
   top: 5%;
   right: 5%;
-  color: $mainGreen;
+  color: #4caf50;
   font-size: 2rem;
   cursor: pointer;
-  transition: all 0.3s linear;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.favo-btn {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  color: #4caf50;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
   opacity: 0;
 }
 
@@ -32,21 +41,25 @@
   opacity: 1;
 }
 
+.img-container:hover .favo-btn {
+  opacity: 1;
+}
+
 .tour-info {
   padding: 1rem 0.5rem;
   h3 {
     text-transform: uppercase;
-    color: $mainGreen;
+    color: #4caf50;
   }
   h4 {
     text-transform: capitalize;
-    color: $mainBlack;
+    color: #333;
     margin: 0.2rem 0 0.6rem 0;
   }
   h5 {
     text-transform: capitalize;
     span {
-      color: $mainGreen;
+      color: #4caf50;
       margin: 0.5rem;
       font-size: 1.2rem;
       cursor: pointer;
